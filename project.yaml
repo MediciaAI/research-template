@@ -1,6 +1,6 @@
 version: '3.0'
 
-expectations:
+tpp:
   population_size: 1000
 
 actions:
