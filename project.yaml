@@ -6,7 +6,7 @@ expectations:
 actions:
 
   generate_study_population:
-    run: cohortextractor:latest generate_cohort --database-url mssql://SA:Your_password123!@mssql:1433/Test_OpenCorona
+    run: cohortextractor:latest generate_cohort --generate-cohort-by-sql queries_rcloud.sql --database-url=postgres://postgres:1234@192.168.0.16:5432/rcloud
     outputs:
       highly_sensitive:
         cohort: output/input.csv
