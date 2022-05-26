@@ -20,3 +20,9 @@ actions:
     outputs:
       moderately_sensitive:
         cohort: output/stats.txt
+  r_test:
+    run: r:latest Rscript analysis/test_r.R
+    needs: [predict_model]
+    outputs:
+      moderately_sensitive:
+        cohort: output/r_plot.png
