@@ -10,7 +10,6 @@ actions:
         cohort: output/input.csv
   train_model:
     run: python:latest python analysis/train_model.py
-    needs: [generate_study_population]
     outputs:
       moderately_sensitive:
         model: output/regression_model.joblib
@@ -22,7 +21,6 @@ actions:
         stats: output/stats.txt
   r_analysis:
     run: r:latest Rscript analysis/test_r.R
-    needs: [predict_model]
     outputs:
       moderately_sensitive:
         plot1: output/r_plot.png
