@@ -20,7 +20,7 @@ actions:
     outputs:
       moderately_sensitive:
         stats: output/stats.txt
-  r_test:
+  r_analysis:
     run: r:latest Rscript analysis/test_r.R
     needs: [predict_model]
     outputs:
