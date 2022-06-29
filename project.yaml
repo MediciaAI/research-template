@@ -13,16 +13,17 @@ actions:
     needs: [generate_study_population]
     outputs:
       moderately_sensitive:
-        cohort: output/regression_model.joblib
+        model: output/regression_model.joblib
   predict_model:
     run: python:latest python analysis/model_predict.py
     needs: [train_model]
     outputs:
       moderately_sensitive:
-        cohort: output/stats.txt
+        stats: output/stats.txt
   r_test:
     run: r:latest Rscript analysis/test_r.R
     needs: [predict_model]
     outputs:
       moderately_sensitive:
-        cohort: output/r_plot.png
+        plot1: output/r_plot.png
+        plot2: output/r_plot2.png
