@@ -23,4 +23,4 @@ actions:
     run: r:latest Rscript analysis/test_r.R
     outputs:
       moderately_sensitive:
-        output/output.txt
+        rout: output/output.txt
